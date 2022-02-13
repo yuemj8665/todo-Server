@@ -23,13 +23,4 @@ public class TodoEntity {
 
     @Column(nullable = false)
     private Boolean completed;
-
-    public Boolean getCompleted() {
-        return completed;
-    }
-
-    public TodoEntity setCompleted(Boolean completed) {
-        this.completed = completed;
-        return this;
-    }
 }

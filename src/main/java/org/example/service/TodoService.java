@@ -21,7 +21,7 @@ public class TodoService {
         TodoEntity todoEntity = new TodoEntity();
         todoEntity.setTitle(request.getTitle());
         todoEntity.setOrder(request.getOrder());
-        todoEntity.setCompleted(request.isCompleted());
+        todoEntity.setCompleted(request.getCompleted());
         return this.repository.save(todoEntity);
     }
     // 2. todo리스트 목록 중 특정 아이템을 조회
@@ -42,9 +42,9 @@ public class TodoService {
         if (request.getOrder() != null) {
             entity.setOrder(request.getOrder());
         }
-//        if (request.isCompleted() != null) {
-//
-//        }
+        if (request.getCompleted()!=null) {
+            entity.setCompleted(request.getCompleted());
+        }
         return this.repository.save(entity);
     }
     // 5. todo리스트 목록 중 특정 아이템을 삭제
